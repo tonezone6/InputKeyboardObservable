@@ -1,1 +1,2 @@
-Handles text inputs (UITextField, UITextView) embeded in a UIScrollView when keyboard appears/disappears.
+# Input keyboard observable
+Handling text inputs (UITextField, UITextView) embeded in a UIScrollView when keyboard is presented.
