@@ -1,6 +1,6 @@
 //
-//  KBVC.swift
-//  CustomLoading
+//  InputKeyboardObservableViewController.swift
+//  InputKeyboardObservable
 //
 //  Created by Alex Stratu on 01/03/2019.
 //  Copyright © 2019 Alex Stratu. All rights reserved.
