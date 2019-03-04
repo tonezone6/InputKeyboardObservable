@@ -1,4 +1,3 @@
-![InputKeyboardObservable: A simple Swift keyboard handler solution](inputKeyboardObservable.png)
 # Input keyboard observable
 Handling text inputs `UITextField`, `UITextView` embedded in a `UIScrollView` when keyboard is presented.
 
@@ -29,3 +28,4 @@ class ViewController: InputKeyboardObservableViewController {
 ```
 Now, your view controller will handle text inputs automatically and you will also gain a keyboard toolbar containing `Previous`, `Next` and `Done` buttons for easier navigation.
 
+![InputKeyboardObservable: A simple Swift keyboard handler solution](inputKeyboardObservable.png)
