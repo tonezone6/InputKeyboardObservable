@@ -10,8 +10,8 @@ import UIKit
 
 protocol InputKeyboardObservable {
     /**
-    Inform 'InputKeyboardObservableViewController' when text input did begin editing in order to
-    adjust scroll view content offset to display text input just above keyboard */
+    Inform 'InputKeyboardObservableViewController' when text input did begin editing
+    in order to adjust scroll view content offset to display text input just above keyboard */
     var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> Void)? { get set }
 }
 
