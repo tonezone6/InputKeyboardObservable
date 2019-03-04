@@ -9,8 +9,8 @@
 import UIKit
 
 protocol InputKeyboardObservable {
-    /*
-    Inform KBVC that text input did begin editing in order to
+    /**
+    Inform 'InputKeyboardObservableViewController' when text input did begin editing in order to
     adjust scroll view content offset to display text input just above keyboard */
     var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> Void)? { get set }
 }
@@ -130,6 +130,7 @@ extension InputKeyboardObservableViewController {
         var textInput = textInputItem
         textInput.didBeginEditingHandler = { [unowned self] sender in
             var contentOffset = CGPoint.zero
+            // UITextField
             if let textField = sender as? UITextField {
                 contentOffset = CGPoint(x: 0, y: textField.frame.origin.y - textField.frame.height - self.keyboardHeight - self.distanceFromTextField)
                 if let index = self.textInputArray.index(where: { ($0 as? UITextField) == textField }) {
@@ -137,6 +138,7 @@ extension InputKeyboardObservableViewController {
                     self.handleToolbarButtons()
                 }
             }
+            // UITextView
             if let textView = sender as? UITextView {
                 contentOffset = CGPoint(x: 0, y: textView.frame.origin.y - self.keyboardHeight)
                 if let index = self.textInputArray.index(where: { ($0 as? UITextView) == textView }) {
@@ -160,10 +162,18 @@ extension InputKeyboardObservableViewController {
         let toolbar = UIToolbar()
         toolbar.barStyle = .default
         // Toolbar buttons
-        previousButton = UIBarButtonItem(title: "Previous", style: .plain, target: self, action: #selector(goToPrevious(sender:)))
-        nextButton = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(goToNext(sender:)))
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard(sender:)))
+        previousButton = UIBarButtonItem(
+            title: "Previous", style: .plain, target: self, action: #selector(goToPrevious(sender:))
+        )
+        nextButton = UIBarButtonItem(
+            title: "Next", style: .plain, target: self, action: #selector(goToNext(sender:))
+        )
+        let flexibleSpace = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace, target: nil, action: nil
+        )
+        let doneButton = UIBarButtonItem(
+            title: "Done", style: .done, target: self, action: #selector(dismissKeyboard(sender:))
+        )
         guard let previous = previousButton, let next = nextButton else { return }
         textInputArray.count == 1 ?
             (toolbar.items = [flexibleSpace, doneButton]) :
