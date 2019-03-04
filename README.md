@@ -3,7 +3,7 @@ Handling text inputs `UITextField`, `UITextView` embeded in a `UIScrollView` whe
 
 ## Getting Started
 ### Step 1
-Adopt `InputKeyboardObservable` protocol in your custom text input and define `didBeginEditingHandler`
+Adopt `InputKeyboardObservable` protocol in your custom text input and define `didBeginEditingHandler`.
 ```swift
 class RoundedTextField: UITextField, InputKeyboardObservable {
   var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> ())?
@@ -11,7 +11,7 @@ class RoundedTextField: UITextField, InputKeyboardObservable {
 }
 ```
 ### Step 2:
-Call `didBeginEditingHandler` to inform `InputKeyboardObservableViewController` when text input begins editing. This will scroll your text input just above the keyboard when you tap inside it.
+Call `didBeginEditingHandler` to inform `InputKeyboardObservableViewController` when text input begins editing. This will scroll your text input just above the keyboard when you tap inside.
 ```swift
 extension RoundedTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -26,6 +26,5 @@ class ViewController: InputKeyboardObservableViewController {
   // ...
 }
 ```
-
-Now your view controller will handle text inputs automatically and you will also gain a keyboard toolbar containing `Previous`, `Next` and `Done` buttons for easier navigation.
+Now, your view controller will handle text inputs automatically and you will also gain a keyboard toolbar containing `Previous`, `Next` and `Done` buttons for easier navigation.
 
