@@ -10,7 +10,7 @@ class RoundedTextField: UITextField, InputKeyboardObservable {
   // ...
 }
 ```
-### Step 2:
+### Step 2
 Call `didBeginEditingHandler` to inform `InputKeyboardObservableViewController` when text input begins editing. This will scroll your text input just above the keyboard when you tap inside.
 ```swift
 extension RoundedTextField: UITextFieldDelegate {
@@ -19,7 +19,7 @@ extension RoundedTextField: UITextFieldDelegate {
     }
 }
 ```
-### Step 3:
+### Step 3
 In your view controller containing the `UIScrollView` inherit from `InputKeyboardObservableViewController`.
 ```swift
 class ViewController: InputKeyboardObservableViewController {
