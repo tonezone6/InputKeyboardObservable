@@ -1,5 +1,5 @@
 # Input keyboard observable
-Handling text inputs `UITextField`, `UITextView` embeded in a `UIScrollView` when keyboard is presented.
+Handling text inputs `UITextField`, `UITextView` embedded in a `UIScrollView` when keyboard is presented.
 
 ## Getting Started
 ### Step 1
