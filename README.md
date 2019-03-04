@@ -1,4 +1,4 @@
-![InputKeyboardObservable: A simple Swift keyboard handler solution](https://raw.githubusercontent.com/tonezone6/InputKeyboardObservable/inputKeyboardObservable.png)
+![InputKeyboardObservable: A simple Swift keyboard handler solution](inputKeyboardObservable.png)
 # Input keyboard observable
 Handling text inputs `UITextField`, `UITextView` embedded in a `UIScrollView` when keyboard is presented.
 
