@@ -6,8 +6,8 @@ Handling text inputs `UITextField`, `UITextView` embeded in a `UIScrollView` whe
 Adopt `InputKeyboardObservable` protocol in your custom text input and define `didBeginEditingHandler`.
 ```swift
 class RoundedTextField: UITextField, InputKeyboardObservable {
-  var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> ())?
-  // ...
+   var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> ())?
+   // ...
 }
 ```
 ### Step 2
@@ -23,7 +23,7 @@ extension RoundedTextField: UITextFieldDelegate {
 In your view controller containing the `UIScrollView` inherit from `InputKeyboardObservableViewController`.
 ```swift
 class ViewController: InputKeyboardObservableViewController {
-  // ...
+   // ...
 }
 ```
 Now, your view controller will handle text inputs automatically and you will also gain a keyboard toolbar containing `Previous`, `Next` and `Done` buttons for easier navigation.
