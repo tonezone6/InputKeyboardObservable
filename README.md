@@ -1,7 +1,7 @@
 # Input keyboard observable
 Handling text inputs `UITextField`, `UITextView` embedded in a `UIScrollView` when keyboard is presented.
 
-## Getting Started
+## How to use
 ### Step 1
 Adopt `InputKeyboardObservable` protocol in your custom text input.
 ```swift
