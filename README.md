@@ -6,7 +6,7 @@ Handling text inputs `UITextField`, `UITextView` embedded in a `UIScrollView` wh
 Adopt `InputKeyboardObservable` protocol in your custom text input.
 ```swift
 class RoundedTextField: UITextField, InputKeyboardObservable {
-   var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> ())?
+   var textInputDidBeginEditingHandler: ((_ sender: UITextInput) -> Void)? { get set }
    // ...
 }
 ```
@@ -15,7 +15,7 @@ Call `didBeginEditingHandler` to inform `InputKeyboardObservableViewController` 
 ```swift
 extension RoundedTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        didBeginEditingHandler?(self)
+        textInputDidBeginEditingHandler?(self)
     }
 }
 ```

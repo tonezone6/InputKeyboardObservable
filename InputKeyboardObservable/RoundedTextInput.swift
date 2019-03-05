@@ -21,7 +21,7 @@ struct TextInputStyle {
 
 class RoundedTextField: UITextField, InputKeyboardObservable {
     
-    public var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> ())?
+    public var textInputDidBeginEditingHandler: ((_ sender: UITextInput) -> ())?
     
     private let padding = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
     
@@ -62,7 +62,7 @@ class RoundedTextField: UITextField, InputKeyboardObservable {
 extension RoundedTextField: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        didBeginEditingHandler?(self)
+        textInputDidBeginEditingHandler?(self)
     }
 }
 
@@ -71,7 +71,7 @@ extension RoundedTextField: UITextFieldDelegate {
 
 class RoundedTextView: UITextView, InputKeyboardObservable {
     
-    public var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> ())?
+    public var textInputDidBeginEditingHandler: ((_ sender: UITextInput) -> ())?
     private let placeholder = "Placeholder 6"
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
@@ -99,7 +99,7 @@ class RoundedTextView: UITextView, InputKeyboardObservable {
 extension RoundedTextView: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        didBeginEditingHandler?(self)
+        textInputDidBeginEditingHandler?(self)
         if textView.text == placeholder {
             textView.text = ""
             textView.textColor = TextInputStyle.textColor

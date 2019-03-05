@@ -12,7 +12,7 @@ protocol InputKeyboardObservable {
     /**
     Inform 'InputKeyboardObservableViewController' when text input did begin editing
     in order to adjust scroll view content offset to display text input just above keyboard */
-    var didBeginEditingHandler: ((_ sender: InputKeyboardObservable) -> Void)? { get set }
+    var textInputDidBeginEditingHandler: ((_ sender: UITextInput) -> Void)? { get set }
 }
 
 class InputKeyboardObservableViewController: UIViewController {
@@ -128,7 +128,7 @@ extension InputKeyboardObservableViewController {
     
     func setupHandler(textInputItem: InputKeyboardObservable) {
         var textInput = textInputItem
-        textInput.didBeginEditingHandler = { [unowned self] sender in
+        textInput.textInputDidBeginEditingHandler = { [unowned self] sender in
             var contentOffset = CGPoint.zero
             // UITextField
             if let textField = sender as? UITextField {
